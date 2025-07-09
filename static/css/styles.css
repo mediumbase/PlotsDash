@@ -1,0 +1,430 @@
+/* General Styles */
+body {
+    font-family: 'Helvetica Light', Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Header Bar */
+.header {
+    width: 100%;
+    background-color: #a0a0a0;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.header #ip-address,
+.header #datetime {
+    font-size: 14px;
+    font-family: monospace;
+    color: #e0e0e0;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* Account for fixed header */
+    overflow: hidden;
+    flex-direction: row; /* Horizontal layout by default */
+}
+
+/* Left Jumbo Container (60% width) */
+.left-jumbo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Video Feeds Section */
+.video-feeds {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.video-feed {
+    flex: 1;
+    background-color: #d0d0d0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    min-height: 200px; /* Ensure minimum height for buttons */
+	max-width: 80%;
+    max-height: 100%;
+	border: none;
+}
+
+.video-feed img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.weather-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Buttons (Snapshot, Time-Lapse, Analyze) */
+.snapshot-button {
+	position: absolute;
+    bottom: 5px;
+    background-color: #007b68;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    z-index: 10; /* Ensure buttons appear above other content */
+    transition: background-color 0.3s ease;
+}
+
+.timelapse-button,
+.analyze-button {
+    position: absolute;
+    bottom: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    z-index: 10; /* Ensure buttons appear above other content */
+    transition: background-color 0.3s ease;
+	 gap: 20px
+}
+
+.snapshot-button:hover
+{
+	background-color: #031C20;
+}
+
+.timelapse-button:hover,
+.analyze-button:hover {
+    background-color: #0056b3;
+}
+
+.snapshot-button {
+    right: 10px;
+	
+}
+
+.timelapse-button {
+    left: 10px;
+	
+}
+
+.analyze-button {
+    left: 95px;
+	
+}
+
+/* Sensor Stats Section */
+.sys-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.sensor-outside,
+.sensor-inside {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.widget {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 35px;
+    height: 20px;
+	}
+
+/* Controls System Widgets*/
+.widget h2,
+.widget h5 {
+    margin: 0;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.widget p {
+    margin: 0;
+    font-size: 10px;
+}
+
+/* Right Jumbo Container (40% width) */
+.right-jumbo {
+    width: 40%;
+    background-color: #e0e0e0;
+    padding: 20px;
+    box-shadow: -2px 0 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+	flaot: right;
+}
+
+/* 4-Box Layout */
+.four-box-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 10px;
+	height: 100%;
+}
+/* Box Layout */
+.box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+/* Controls data header titles*/
+.box h3 {
+    margin: 0 0 10px 0; /* Increased bottom margin for better spacing */
+    font-size: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+/* Controls the table header*/
+.box th,
+.box td {
+    padding: 3px 5px; /* Increased padding for better spacing */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+	font-size: 09px;
+}
+
+/* Target the second <th> inside the .box class 
+.box th:nth-child(2) {
+    font-size: 12px; /* Adjust the font size as needed 
+}*/
+
+.label-small-font {
+    font-size: 2px; /* Adjust the size as needed */
+}
+
+.box th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+	
+}
+
+.box tr:hover {
+    background-color: #f1f1f1;
+}
+
+.loading {
+    padding: 10px;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.error {
+    padding: 10px;
+    text-align: center;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+/* Detection Insights Section */
+#detection-insights {
+    display: flex;
+    flex-direction: column;
+	font-size: 9px;
+}
+
+.box.highlight {
+    border: 3px solid #ff0000; /* Bold red border for highlighting */
+}
+
+/* Insight Card Container */
+.insight-card {
+    border-radius: 5px;
+    display: flex;
+    max-width: 500px; /* Adjust as needed */
+    margin: 5px auto; /* Center the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Section */
+.insight-card img {
+	max-width: 50px; /* Adjust as needed */
+    border-bottom: 2px solid #e0e0e0;
+}
+
+/* Content Section */
+.insight-card .content {
+    padding: 1px;
+    background-color: white;
+   
+}
+
+.insight-card h6 {
+    margin: 0 0 16px 0;
+    font-size: 9px;
+    font-weight: bold;
+    color: #333;
+}
+
+.insight-card p {
+    margin: 0 0 2px 0;
+    font-size: 11px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.insight-card p:last-child {
+    margin-bottom: 0; /* Remove margin for the last paragraph */
+}
+
+
+
+/* Insight Card Container */
+#growth-graph{
+    border-radius: 5px;
+    display: flex;
+    max-width: 200px; /* Adjust as needed */
+    margin: 2px auto; /* Center the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#growth-graph:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .insight-card {
+        max-width: 100%; /* Full width on smaller screens */
+        margin: 10px;
+    }
+
+    .insight-card img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+
+    .insight-card h6 {
+        font-size: 9px;
+    }
+
+    .insight-card p {
+        font-size: 8px;
+    }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Switch to vertical layout on smaller screens */
+    }
+
+    .left-jumbo,
+    .right-jumbo {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .video-feeds {
+        flex-direction: column; /* Stack video feeds vertically */
+        gap: 10px;
+    }
+
+    .video-feed {
+        width: 100%; /* Full width on smaller screens */
+        min-height: 150px; /* Adjust minimum height */
+    }
+
+    .snapshot-button,
+    .timelapse-button,
+    .analyze-button {
+        position: static; /* Stack buttons vertically */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .snapshot-button {
+        right: auto;
+    }
+
+    .timelapse-button {
+        left: auto;
+    }
+
+    .analyze-button {
+        left: auto;
+    }
+
+    .four-box-layout {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+	
+}
